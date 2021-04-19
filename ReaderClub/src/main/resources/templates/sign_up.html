@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign up</title>
+	<link rel="stylesheet" type="text/css" href="./css/sign_up.css"/>
+	<script type="text/javascript" src="./js/signup.js" async></script>
+</head>
+<body>
+	<div class="container">
+		<div class="register-box">
+			<div class="title-box">
+				<span>Welcome reader!</span>
+			</div>
+			<form id=form1>
+				<div class="username-box">
+					<span class="require">*</span>
+					<label for="username">Username</label>
+					<div class="username-input">
+						<input type="text" id="username" name="username" placeholder="Ex: username" />
+					</div>
+				</div>
+ 
+				<div class="userPassword-box">
+					<span class="require">*</span>
+					<label for="userPassword">Password</label>
+					<div class="userPassword-input">
+						<input type="password" id="userPassword" name="userPassword" placeholder="Ex: password" />
+					</div>
+				</div>
+ 
+				<div class="userRePassword-box">
+				<span class="require">*</span>
+						<label for="userRePassword">Confirm password</label>
+					<div class="userRePassword-input">
+						<input type="password" id="userRePassword" name="userRePassword" placeholder="Ex: password" />
+					</div>
+				</div>
+ 
+				<div class="userFirstName-box">
+					<span class="require">*</span>
+					<label for="userFirstName">First Name</label>
+					<div class="userFirstName-input">
+						<input type="text" id="userFirstName" name="userFirstName"/>
+					</div>
+				</div>
+				
+				<div class="userLastName-box">
+					<span class="require">*</span>
+					<label for="userLastName">Last Name</label>
+					<div class="userLastName-input">
+						<input type="text" id="userLastName" name="userLastName"/>
+					</div>
+				</div>
+				
+				<div class="userGender-box">
+					<span class="require">*</span>
+					<label>Gender</label>
+					<div class="userGender-input">
+						<input type="radio" id="userGender_01" name="userGender" value="male" checked="checked" />Male
+						<input type="radio" id="userGender_02" name="userGender" value="female" />Female
+					</div>
+				</div>
+				
+				<div class="submit-box">
+					<input id = "submit-button" type="button" onclick="btnclick()" value="Create">
+				</div>
+				
+				<div class="goLogin-box">
+					<a href="/" style="text-decoration: none;">Already have an account? Sign in</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
