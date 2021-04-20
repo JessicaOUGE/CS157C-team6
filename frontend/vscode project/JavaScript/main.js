@@ -7,112 +7,109 @@
         {
             type: "Audio Book",
             include: [
-                "言情","悬疑","都市","幻想","武侠","文学","历史","官场商战","经管","社科","推理","女生最爱","男生最爱","QQ阅读",
-                "读客图书","果麦文化","中信出版","博集天卷","磨铁阅读","蓝狮子","速播专区"
+               
             ]
         },
         {
             type: "Kids",
             include: [
-                "绘本","儿歌","小学教材","幻想","科普","英语","国学","家教","故事","卡通","名著"
+                
             ]
         },
         {
             type: "Music",
             include: [
-                "老歌","纯音乐","影视","欧美","古风","古典","民谣","翻唱","催眠","动漫游戏","日韩","电子","铃声","音乐小讲堂",
-                "创作达人"
+               
             ]
         },
         {
             type: "History",
             include: [
-                "世界史","百家讲坛","中国史","名人传","春秋战国","秦汉","三国","魏晋","隋唐","宋元","明清","民国","侃野史"
+         
             ]
         },
         {
             type: "Life",
             include: [
-                "睡前夜话","恋爱技巧","情绪压力","婚姻家庭","职场人际","个人成长","心里健康","魅力养成","品质生活","亲子感情"
+               
             ]
         },
         {
             type: "Talk Show",
             include: [
-                "干货铺子","情怀江湖","奇葩绽放","财声话痨","深情无忌","歪果仁说"
+               
             ]
         },
         {
             type: "Language",
             include: [
-                "口语","少儿","教材","词汇","职场","考试","入门","美文","脱口秀","名著","演讲","影视","旅游","精品"
+                
             ]
         },
         {
             type: "Training",
             include: [
-                "人际沟通","心理调节","中小学","高效管理","当众演讲","职业技能","大学生","女性励志","名企大咖","行业新知"
+               
             ]
         },
         {
             type: "Business",
             include: [
-                "泛财经","股评","理财","创业","管理"
+               
             ]
         },
         {
             type: "Health",
             include: [
-                "中医养生","健身减肥","知识大讲堂","美丽女人经","护肝养肾","食疗课堂","儿童健康管理"
+  
             ]
         },
         {
             type: "News",
             include: [
-                "环球视野","体育娱乐","财经科技","文化百态"
+              
             ]
         },
         {
             type: "Radio",
             include: [
-                "文艺台","音乐台","校园台","故事台","都市台","交通台","心里健康","魅力养成","品质生活","亲子感情","明清","民国","侃野史","音乐小讲堂",
-                "创作达人","果麦文化","中信出版","博集天卷","磨铁阅读","蓝狮子","速播专区"
+                
             ]
         },
         {
             type: "Technology",
             include: [
-                "科普","互联网","数码","智能","大数据","创客"
+               
             ]
         },
         {
             type: "Traval",
             include: [
-                "环球风物","走遍中国","游记攻略","语音导游","旅游玩家"
+              
             ]
         },
         {
             type: "Game",
             include: [
-                "ACG脱口秀","二次元大本营","ACG广播","美女主播","ACG音乐","英雄联盟","ACG咨询","有声轻小说","魔兽世界","睡前","古风","CV配音","鬼畜娱乐","实况解说"
+              
             ]
         },
         {
             type: "Movie",
             include: [
-                "影评地带","原声记忆","大话影人","电影资讯","必听影单"
+               
             ]
         },
         {
             type: "Fashion",
             include: [
-                "美食","生活家","美容","时尚","运动","萌宠","精品推荐"
+             
             ]
         },
         {
             type: "Open University",
             include: [
-                "古诗词","诗歌词赋","现代诗","诗人电台","首席朗诵","启蒙","评赏"
+                
             ]
         }
     ];
@@ -124,12 +121,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51fcENE5o0L._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: []
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -141,12 +138,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51xhe3Y-9HL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
                     main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    junior: [""]
                 }
             ]
 
@@ -158,12 +155,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/41yU74dVDHL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -175,11 +172,11 @@
             imgUrl: "https://m.media-amazon.com/images/I/41Cs5gI6WZL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
+                    main: "",
                     junior: ["诗歌词赋","现代诗"]
                 }
             ]
@@ -192,12 +189,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51tz0xaXfYL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -209,12 +206,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51ZGmjjHpXL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -226,12 +223,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51zxw8aY68L._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -243,12 +240,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51+fKN8x01L._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -260,12 +257,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51JjhKzNn3L._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -277,12 +274,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/61hXuqdQYnL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -294,12 +291,12 @@
             imgUrl: "https://m.media-amazon.com/images/I/51x4H1IhUVL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
@@ -311,36 +308,36 @@
             imgUrl: "https://m.media-amazon.com/images/I/51ZqipZ77PL._SL500_.jpg",
             type: [
                 {
-                    main: "时尚生活",
-                    junior: ["生活家","美容"]
+                    main: "",
+                    junior: [""]
                 },
                 {
-                    main: "诗歌",
-                    junior: ["诗歌词赋","现代诗"]
+                    main: "",
+                    junior: [""]
                 }
             ]
 
         },
 
     ];
-    //初始化左侧菜单
+    //initial sidebar
     function getMenu () {
         var str1 = "";
         bookTypeData.forEach(function (item) {
             var str2 = "";
             var liClass = "",pClass="";
-            if(item.type !== "热门") {
+            if(item.type !== "Hot") {
                 item.include.forEach(function (item1) {
                     str2 += '<a href="#" class="not-selected link"><span>'+item1+'</span></a>';
                 })
             }
             str2 = '<div class="child-menu">' + str2 + '</div>';
-            if(item.type === "热门") {
+            if(item.type === "Hot") {
                 liClass = "hot";
                 pClass = "active"
-            } else if(item.type === "有声书") {
+            } else if(item.type === "Audio Book") {
                 liClass = "not-hot voice-book";
-            } else if(item.type === "儿童") {
+            } else if(item.type === "Kids") {
                 liClass = "not-hot child";
             } else {
                 liClass = "not-hot not-child not-voice-book"
@@ -349,22 +346,22 @@
         });
         document.querySelector("#menu").innerHTML = str1;
     }
-    //初始化绑定事件
+    //initial tied event
     function initEvents() {
         var array = [
-            {//点击右上方横向选择按钮
+            {//Click top-right hor button
                 parentElement: "#easy-select",
                 childName: "li",
                 className: "active",
                 eventName: "click"
             },
-            {//点击左上方横向选择按钮
+            {//点击左上方横向选择按钮 click top-left hor button
                 parentElement: "#left-top-menu",
                 childName: "li",
                 className: "active",
                 eventName: "click"
             },
-            {//点击导航栏
+            {//click meun
                 parentElement: "#catalog",
                 childName: "li",
                 className: "active",
@@ -383,7 +380,7 @@
                 })
             });
         }
-        //点击搜索框，显示下拉菜单
+        //Click search table，show dropped down
         function controlSearch () {
             document.querySelector("#search").addEventListener("mouseover", function(ev) {
                 this.querySelector("ul").style.display = "block";
@@ -392,7 +389,7 @@
                 this.querySelector("ul").style.display = "none";
             });
         }
-        //点击展开，显示下方内容
+        //click open，show result
         function slideUpDown () {
             var flags = 1;
             document.querySelector("#slide-up-down").addEventListener("click", function (ev) {
@@ -409,39 +406,35 @@
                 }
             })
         }
-        //左侧筛选菜单控制逻辑
+        //left sidebar
         function controlLeftMenu () {
-            //清除小标签的样式
+            //clear format
             function resetSmallTag () {
                 document.querySelectorAll("#menu a").forEach(function (value) {
                     value.classList.remove("visited");
                     value.classList.add("not-selected")
                 });
             }
-            //改变面包屑的内容
+        
             function addDir (aText, spanText) {
                 document.querySelector("#dir a").textContent = aText;
                 document.querySelector("#dir span").innerHTML = spanText;
             }
-            //点击左侧菜单
+            //click left sidebar
             document.querySelector("#menu").addEventListener("click", function (ev) {
-                //将父元素menu下的所有p元素移除类active
                 this.querySelectorAll("p").forEach(function (value) {
                     value.classList.remove("active");
                 });
-                //点击的元素是p元素则
                 if(ev.target.localName === "p") {
                     ev.target.classList.add("active");
                     addDir(ev.target.innerText, "");
                     resetSmallTag();
                 }
-                //点击的元素是p元素的兄弟元素
                 if(ev.target.localName === "div") {
                     ev.target.parentNode.querySelector("p").classList.add("active");
                     addDir(ev.target.parentNode.querySelector("p").innerText, "");
                     resetSmallTag();
                 }
-                //如果点击的元素是p元素的兄弟元素的子元素span：
                 if(ev.target.localName === "span") {
                     var target = ev.target.parentNode.parentNode.parentNode;
                     target.querySelector("p").classList.add("active");
@@ -451,7 +444,6 @@
                     addDir(target.querySelector("p").innerText, ">>&nbsp;"+ev.target.innerText);
                 }
             });
-            //点击面包屑
             document.querySelector("#dir a").addEventListener("click", function (ev) {
                 document.querySelector("#dir span").innerHTML = "";
                 resetSmallTag();
@@ -463,7 +455,7 @@
         controlLeftMenu();
         slideUpDown ();
     }
-    //初始化右侧内容区
+    //initial right side 
     function getContent () {
         var str = "";
         bookData.forEach(function (item) {
@@ -488,7 +480,7 @@
                     '</div>'
         });
         document.querySelector("#main-content").innerHTML = str;
-        //页码初始化
+        //page number initial
         function showPage (totalPage) {
             var str = '<li class="pre">Pre</li>';
             for(var i = 0; i < totalPage; i++) {
@@ -509,7 +501,7 @@
         }
         showPage(100);
     }
-    //页码控制逻辑
+    //page number controll
     function controlPage (currentPage) { }
     function init () {
         getMenu ();
