@@ -1,0 +1,301 @@
+footer {
+    margin-top: 30px;
+}
+.footer-nav {
+    background-color: #f6f6f6;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.footer-nav:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.footer-nav .nav-item {
+    float: left;
+    height: 122px;
+    border-right: 1px solid #cdcdcd;
+    padding-left: 25px;
+}
+.footer-nav .nav-item:nth-child(1) {
+    width: 170px;
+}
+.footer-nav .nav-item:nth-child(2) {
+    width: 260px;
+}
+.footer-nav .nav-item:nth-child(3) {
+    width: 207px;
+}
+.footer-nav .nav-item:nth-child(4) {
+    width: 207px;
+    border-right: none;
+}
+.footer-nav .nav-item a {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    color: #999;
+    margin-right: 20px;
+}
+.footer-nav .nav-item a:hover {
+    color: #ff4611;
+}
+.footer-nav .nav-item:nth-child(2) a {
+    width: 50px;
+}
+.footer-nav .nav-item:nth-child(4) a:nth-child(5) {
+    margin-right: 30px;
+}
+.footer-nav .nav-item:nth-child(4) a:nth-child(6) {
+    margin-right: 44px;
+}
+.nav-item p {
+    padding-bottom: 10px;
+}
+/*合作与服务begin*/
+.footer-content {
+    padding: 20px;
+    border-bottom: 1px solid #efefef;
+}
+.footer-content .main-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer-attention:after,
+.footer-attention .attention-item:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.footer-attention .attention-item {
+    position: relative;
+    float: left;
+    padding-left: 40px;
+    height: 50px;
+}
+.footer-attention .attention-item:hover .icon-mask{
+    display: block;
+}
+.footer-attention .attention-item .icon-mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.23);
+    z-index: 20000;
+}
+.footer-attention .attention-item .item-logo {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.footer-attention .icon1 {
+    background: url("../images/footer-logo.png") no-repeat;
+    background-origin: padding-box;
+    background-position: -419px 0;
+}
+.footer-attention .icon2 {
+    background: url("../images/footer-logo.png") no-repeat;
+    background-origin: padding-box;
+    background-position: -84px 6px;
+}
+.footer-attention .icon3 {
+    background: url("../images/footer-logo.png") no-repeat;
+    background-origin: padding-box;
+    background-position: 0 6px;
+}
+.footer-attention .icon4 {
+    background: url("../images/footer-logo.png") no-repeat;
+    background-origin: padding-box;
+    background-position: -493px 0;
+}
+.footer-attention .attention-item .item-content {
+    float: left;
+}
+
+.footer-attention .attention-item .title {
+    color: #333;
+    font-size: 16px;
+}
+.footer-attention .attention-item .intro {
+    color: #999;
+    font-size: 12px;
+}
+.footer-content .more-info .title,
+.footer-content .entry .title{
+    font-size: 12px;
+    color: #999;
+    font-weight: bold;
+}
+.more-info {
+    margin-top: 20px;
+}
+.more-info .attention-content {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #999;
+}
+.more-info .slide-down {
+    color: #FF9070;
+    width: 40px;
+}
+.more-info .slide-down:hover {
+    cursor: pointer;
+}
+.more-info .down-icon:after,
+.more-info .up-icon:after {
+    display: inline-block;
+    margin-left: 5px;
+    content: "";
+    clear: both;
+    transform: rotate(45deg);
+    width: 7px;
+    height: 7px;
+}
+.more-info .down-icon:after {
+    border-left: 1px solid #FF9070;
+    border-top: 1px solid #FF9070;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.more-info .up-icon:after {
+    border-bottom: 1px solid #FF9070;
+    border-right: 1px solid #FF9070;
+    margin-bottom: 3px;
+}
+.footer-content .entry {
+    margin-top: 20px;
+}
+.footer-content .entry:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.footer-content .entry a{
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #999;
+
+}
+.footer-content .entry a:hover {
+    text-decoration: underline;
+}
+.footer-copyright {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+.footer-copyright:after,
+.footer-copyright .attach:after,
+.footer-copyright .attach-item:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.footer-copyright .copyright-cont {
+    display: inline;
+    padding-bottom: 30px;
+}
+.footer-copyright .copyright-cont,
+.footer-copyright .copyright-cont>a{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+}
+.footer-copyright .copyright-cont>a {
+    padding-right: 5px;
+}
+.footer-copyright .copyright-cont>a:hover {
+    text-decoration: underline;
+}
+.footer-copyright .copyright-left,
+.footer-copyright .copyright-right {
+    float: left;
+}
+.footer-copyright .copyright-left img{
+    width: 20px;
+    height: 18px;
+    margin-right: 4px;
+}
+.footer-copyright p {
+    line-height: 40px;
+    font-size: 12px;
+    color: #999;
+    text-align: left;
+}
+.footer-copyright a {
+    font-size: 12px;
+    color: #999;
+}
+.footer-copyright a:hover {
+    text-decoration: underline;
+}
+.copyright-right .attach {
+    width: 390px;
+}
+.footer-copyright .copyright-right a {
+    display: inline-block;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.copyright-right .attach-item,
+.copyright-right .attach-item .icon,
+.copyright-right .attach-item a{
+    float: left;
+}
+.copyright-right .attach-item {
+    margin: 20px 0;
+    width: 180px;
+}
+.copyright-right .attach-item .icon {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+}
+.copyright-right .attach-item .icon1 {
+    background: url("../images/footer-logo.png") no-repeat;
+    background-origin: padding-box;
+    background-position: -288px -1px;
+}
+.copyright-right .attach-item .icon2 {
+    background: url("../images/footer-logo.png") no-repeat;
+    background-origin: padding-box;
+    background-position: -360px -1px;
+}
+.copyright-right .attach-item .icon3 {
+    background: url("../images/warn.png") no-repeat;
+    background-origin: padding-box;
+    background-size: 100% 100%;
+}
+.copyright-right .attach-item .icon4 {
+    background: url("../images/trust.png") no-repeat;
+    background-origin: padding-box;
+    background-size: 100% 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*合作与服务end*/

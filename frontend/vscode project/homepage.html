@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <base target="_blank">
+
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+
+        <div class="m-container">
+            <p class="logo">Reader Club</p>
+            <div id="catalog">
+                <ul class="catalog">
+                    <a href="#"><li class="active">Discover</li></a>
+                    <a href="#"><li>My favorite</li></a>
+                    <a href="#"><li>Download App</li></a>
+                </ul>
+            </div>
+            <!--Searching-->
+            <div class="search" id="search">
+                <input type="text" placeholder="search">
+                <img src="images/glass.png" alt="放大镜">
+                <!--hidden dropdown list-->
+                <ul>
+                    <a href="#">
+                        <li>
+                            <img src="images/story.png" alt="" title="">
+                            <p>Bedtime Story</p>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <img src="images/story.png" alt="" title="">
+                            <p>History</p>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <img src="images/story.png" alt="" title="">
+                            <p>Talk Show</p>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <img src="images/story.png" alt="" title="">
+                            <p>world famous</p>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <img src="images/story.png" alt="" title="">
+                            <p>Business</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <!--Upload-->
+            <div class="upload">
+                <div class="parent">
+                    <div class="upload-button">
+                        <p>Upload</p>
+                    </div>
+                    <div class="upload-angle">
+                        <img src ="images/selectAngle.png" alt = "trangle">
+                    </div>
+                    <!--hidden dropdown list under the upload-->
+                    <ul class ="upload-select">
+                        <a href="#">
+                            <li>
+                                <form id="upform" enctype="multipart/form-data" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="upteainput">upload file</label>
+                                        <input id="upteainput" name="upfile" type="file" class="form-control-file">
+                                    </div>
+                                </form>
+                                <botton id="uptea" type="button" class="btn btn-primary"></botton>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-menu">
+        <div class="m-container">
+            <ul class="menu" id="left-top-menu">
+                <a href="#"><li>Recommend</li></a>
+                <a href="#"><li class="active">Categories</li></a>
+                <a href="#"><li>Star Rearder</li></a>
+            </ul>
+            <!-- <ul class="login"> -->
+                <!-- <a href="#"><li>登录&nbsp;|&nbsp;</li></a> -->
+                <!-- <a href="#"><li>注册</li></a> -->
+            </ul>
+        </div>
+    </div>
+
+</header>
+
+<div class="content">
+    <div class="m-container">
+        <div class="top-menu">
+            <img src="images/listen.PNG" alt="listen to your favorite books">
+            <ul id="easy-select">
+                <a href="#"><li class="active">Hot</li></a>
+                <a href="#"><li>Recent</li></a>
+                <a href="#"><li>Classical</li></a>
+            </ul>
+        </div>
+        <div class="middle" id="dir">
+            <a href="#">Most popular</a>
+            <span></span>
+        </div>
+        <div class="bottom">
+            <div class="left-menu">
+                <ul class="menu" id="menu"></ul>
+            </div>
+            <div class="main-content">
+                <div class="books" id="main-content">
+                </div>
+                <div class="page" id="page">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-nav">
+        <div class="m-container">
+            <div class="nav-item">
+                <p>APP Download</p>
+                <a href="#">for iOS</a>
+                <a href="#">for Android</a>
+                <a href="#">for Windows phone</a>
+            </div>
+            <div class="nav-item">
+                <p>Classification</p>
+                <a href="#">Audio Book</a>
+                <a href="#">Talk Show</a>
+                <a href="#">Kids</a>
+                <a href="#">Music</a>
+                <a href="#">Business</a>
+                <a href="#">Life</a>
+            </div>
+            <div class="nav-item">
+                <p>Featured Products</p>
+                <a href="#">Shopping Center</a>
+                <a href="#">Sound creation space</a>
+                <a href="#">Fun Game </a>
+            </div>
+            <div class="nav-item">
+                <p>Follow us</p>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Wechat</a>
+            </div>
+        </div>
+    </div>
+   
+    <div class="footer-copyright m-container">
+        <div class="copyright-cont">
+            <a href="#">About us</a>|
+            <a href="#">Contact us</a>|
+            <a href="#">Our news</a>|
+            <a href="#">Work with us</a>|
+            <a href="#">Copyright notice</a>|
+            <a href="#">Open Platform</a>|
+            <a href="#">Self-discipline</a>
+        </div>
+    </div>
+</footer>
+<script src="JavaScript/main.js"></script>
+
+</body>
+</html>

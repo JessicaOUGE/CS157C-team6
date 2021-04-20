@@ -1,0 +1,312 @@
+.header .header-top{
+    height: 60px;
+    background-color: #c9bb99;
+}
+.header .header-top:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.header-top .logo {
+    float: left;
+    font-size: 28px;
+    color: #fffdfc;
+    width: 180px;
+    line-height: 60px;
+}
+/*主导航菜单begin*/
+.header-top .catalog li {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    width: 96px;
+    text-align: center;
+    line-height: 60px;
+}
+.header-top .catalog .active,
+.header-top .catalog li:hover,
+.header-top .voice-platform .active,
+.header-top .voice-platform li:hover {
+    background-color: #ff5929;
+    cursor: pointer;
+}
+.header-top .voice-platform {
+    float: left;
+    margin-left: 40px;
+}
+.header-top .voice-platform li {
+    float: left;
+    color: #fff;
+    font-size: 12px;
+    width: 80px;
+    padding-top: 10px;
+    text-align: center;
+}
+.header-top .voice-platform li:before {
+    display: block;
+    content: "";
+    height: 25px;
+    padding-left: 25px;
+    background: url("../images/header.png") no-repeat;
+}
+.header-top .voice-platform a:first-child li:before {
+    background-position: 25px 0;
+}
+.header-top .voice-platform a:last-child li:before {
+    background-position: 25px -25px;
+}
+/*主导航菜单end*/
+
+/*搜索begin*/
+.header-top .search {
+    float: left;
+    position: relative;
+    line-height: 60px;
+}
+.header-top .search input,
+.header-top .search ul {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 12px;
+}
+.header-top .search input {
+    margin-left: 10px;
+    padding: 1px 1px 1px 12px;
+    border-radius: 4px;
+    height: 20px;
+    width: 180px;
+}
+.header-top .search>img {
+    position: absolute;
+    top: 24px;
+    right: 7px;
+    width: 16px;
+    height: 16px;
+}
+.header-top .search ul {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 10px;
+    padding-top: 3px;
+    border-radius: 0 0 4px 4px;
+    border-top-style: none;
+}
+.header-top .search ul li {
+    line-height: 28px;
+    height: 28px;
+    width: 193px;
+}
+.header-top .search ul img {
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.header-top .search ul p {
+    color: #555;
+    margin-left: 28px;
+}
+.header-top .search ul .active,
+.header-top .search ul li:hover {
+    background-color: #fff7df;
+    cursor: pointer;
+}
+/*搜索end*/
+
+/*上传begin*/
+.header-top .upload {
+    float: left;
+    position: relative;
+    font-size: 12px;
+    margin-left: 10px;
+    padding-top: 20px;
+}
+.upload .upload-button {
+    float: left;
+    width: 42px;
+    padding-left: 20px;
+    height: 22px;
+    color: #ff4611;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: #fff url("../images/header.png") no-repeat;
+    background-position: 8px -225px;
+    background-clip: padding-box;
+}
+.upload .upload-button:hover {
+    color: #fff;
+    background: #ff4611 url("../images/header.png") no-repeat;
+    background-position: 8px -245px;
+    cursor: pointer;
+}
+.upload .parent {
+    padding-bottom: 15px;
+}
+.upload .parent:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+.upload .parent:hover .upload-select{
+    display: block;
+}
+.upload .upload-button p {
+    line-height: 22px;
+    text-align: center;
+}
+.upload .upload-angle {
+    float: left;
+    padding: 4px 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    margin-left: 1px;
+}
+.upload .upload-angle img {
+    width: 8px;
+    height: 8px;
+}
+.upload .upload-angle:hover {
+    cursor: pointer;
+}
+.upload .upload-select {
+    display: none;
+    position: absolute;
+    width: 255px;
+    top: 52px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    z-index: 10000;
+}
+.upload .upload-select li:hover {
+    background-color: #fff7df;
+}
+.upload .upload-select li {
+    color: black;
+    float: left;
+    padding: 4px 0 10px 0;
+    width: 85px;
+    text-align: center;
+}
+.upload .upload-select li:before {
+    height: 29px;
+    display: block;
+    content: "";
+    background: url("../images/header.png") no-repeat;
+}
+.upload .upload-select a:nth-child(1) li:before {
+    background-position: 35px -181px;
+}
+.upload .upload-select a:nth-child(2) li:before {
+    background-position: 35px -203px;
+}
+.upload .upload-select a:nth-child(3) li:before {
+    background-position: 35px -224px;
+}
+.upload .upload-select:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: 35px;
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    transform: rotate(45deg);
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+/*上传end*/
+
+/*二级导航菜单begin*/
+.second-menu {
+    background-color: #f5f5f5;
+    height: 30px;
+}
+.second-menu .menu {
+    width: 456px;
+    padding-left: 85px;
+    float: left;
+}
+.second-menu .menu li {
+    float: left;
+    width: 90px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    line-height: 30px;
+}
+.second-menu .menu .active,
+.second-menu .menu li:hover {
+    color: #ff4611;
+}
+.second-menu .login {
+    float: right;
+    overflow: hidden;
+    margin-right: 5px;
+}
+.second-menu .login li {
+    float: left;
+    font-size: 12px;
+    color: #999;
+    line-height: 30px;
+}
+.second-menu .login:hover li {
+    color: #333;
+}
+/*二级导航菜单end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

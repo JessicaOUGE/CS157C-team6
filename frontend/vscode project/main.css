@@ -1,0 +1,25 @@
+@import url("header.css");
+@import url("content.css");
+@import url("footer.css");
+body, html,
+h1, h2, h3, h4,
+div, nav, header, p,
+ul, li,
+span {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body, html {
+    background-color: #c9bb99;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.m-container {
+    width: 960px;
+    margin: 0 auto;
+}
