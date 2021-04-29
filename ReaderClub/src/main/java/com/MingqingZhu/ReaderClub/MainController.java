@@ -22,7 +22,7 @@ public class MainController {
     public String doLogin(@RequestParam(name="username")String username, @RequestParam(name="password")String password) {
         User tmp = userDao.findByUsername(username);
         if(tmp.getPassword().equals(password)) {
-            return "welcome";
+            return "homepage";
         } else {
             return "error";
         }

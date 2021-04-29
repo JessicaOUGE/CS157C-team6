@@ -47,7 +47,7 @@
     content: "";
     height: 25px;
     padding-left: 25px;
-    background: url("../images/header.png") no-repeat;
+    background: url("./pics/home_images/header.png") no-repeat;
 }
 .header-top .voice-platform a:first-child li:before {
     background-position: 25px 0;
@@ -129,13 +129,13 @@
     color: #ff4611;
     border: 1px solid #ccc;
     border-radius: 2px;
-    background: #fff url("../images/header.png") no-repeat;
+    background: #fff url("./pics/home_images/header.png") no-repeat;
     background-position: 8px -225px;
     background-clip: padding-box;
 }
 .upload .upload-button:hover {
     color: #fff;
-    background: #ff4611 url("../images/header.png") no-repeat;
+    background: #ff4611 url("./pics/home_images/header.png") no-repeat;
     background-position: 8px -245px;
     cursor: pointer;
 }
@@ -193,7 +193,7 @@
     height: 29px;
     display: block;
     content: "";
-    background: url("../images/header.png") no-repeat;
+    background: url("./pics/home_images/header.png") no-repeat;
 }
 .upload .upload-select a:nth-child(1) li:before {
     background-position: 35px -181px;

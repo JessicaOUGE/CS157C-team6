@@ -86,7 +86,7 @@
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-    background: #ff6800 url("../images/arrowRight.png") no-repeat;
+    background: #ff6800 url("./pics/home_images/arrowRight.png") no-repeat;
     background-position: 100px 14px ;
 }
 .bottom .menu .child-menu {
@@ -129,28 +129,28 @@
     display: inline-block;
 }
 .bottom .menu .child-menu a[class~="not-selected"]:hover {
-    background: url("../images/content.png") repeat;
+    background: url("./pics/home_images/content.png") repeat;
     background-position: 0 -150px;
     background-origin: padding-box;
 }
 .bottom .child-menu a.link {
-    background: url("../images/content.png") repeat;
+    background: url("./pics/home_images/content.png") repeat;
     background-position: 0 -118px;
     background-origin: padding-box;
 }
 .bottom .child-menu a.link span{
-    background: url("../images/content.png") repeat;
+    background: url("./pics/home_images/content.png") repeat;
     background-position: right -118px;
     background-origin: padding-box;
     color: #666;
 }
 .bottom .child-menu a.visited {
-    background: url("../images/content.png") repeat;
+    background: url("./pics/home_images/content.png") repeat;
     background-position: 0 -1052px;
     background-origin: padding-box;
 }
 .bottom .child-menu a.visited span {
-    background: url("../images/content.png") repeat;
+    background: url("./pics/home_images/content.png") repeat;
     background-position: right -1052px;
     background-origin: padding-box;
     color: #fff;
@@ -200,7 +200,7 @@
     right: 0;
     padding-left: 22px;
     height: 30px;
-    background: rgba(0, 0, 0, 0.65) url("../images/smallIcon.png") no-repeat;
+    background: rgba(0, 0, 0, 0.65) url("./pics/home_images/smallIcon.png") no-repeat;
     background-position: 10px -522px;
     background-origin: padding-box;
     color: #fff;
@@ -270,13 +270,13 @@
     content: "";
     height: 18px;
     width: 18px;
-    background: url("../images/button.png") no-repeat;
+    background: url("./pics/home_images/button.png") no-repeat;
     background-position: 0 -518px;
     background-origin: border-box;
 }
 .main-content .intro .play-btn:hover {
     cursor: pointer;
-    background: url("../images/button.png") no-repeat;
+    background: url("./pics/home_images/button.png") no-repeat;
     background-position: 0 -578px;
     background-origin: border-box;
 }
