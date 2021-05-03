@@ -117,14 +117,14 @@
 .header-top .upload {
     float: left;
     position: relative;
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 10px;
     padding-top: 20px;
 }
 .upload .upload-button {
     float: left;
-    width: 42px;
-    padding-left: 20px;
+    width: 150px;
+    padding-left: 3px;
     height: 22px;
     color: #ff4611;
     border: 1px solid #ccc;
@@ -218,6 +218,7 @@
     border-top: 1px solid #ccc;
 }
 /*上传end*/
+
 
 /*二级导航菜单begin*/
 .second-menu {

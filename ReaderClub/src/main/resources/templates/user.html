@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>details</title>
+	<style type="text/css">
+        h1{
+            font-size:30px;
+            color:#930;
+            text-align:center;
+        }
+        body {
+            background-color: #c9bb99;
+            font-family: Arial;
+            margin: 0 auto; /* Center website */
+            max-width: 800px; /* Max width */
+            padding: 20px; 
+            background-image: url('images/background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%;
+        }      
+            #container {
+                display: flex;
+                justify-content: center;
+            }
+
+            #open {
+                border: none;
+                height: 30px;
+                width: 200px;
+                border-radius: 10px;
+                outline: none;
+                cursor: pointer;
+            }
+
+            #open:hover {
+                background-color: #4a5f8f;
+            }
+
+            #hidden {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #000000;
+                opacity: 0.3;
+                display: none;
+            }
+
+            #box {
+                color: #fff;
+                width: 400px;
+                height: 200px;
+                background-color: #ca9431;
+                display: none;
+                flex-direction: column;
+                border-radius: 10px;
+                align-items: center;
+                padding-top: 50px;
+                box-sizing: border-box;
+                position: absolute;
+                top: 200px;
+                cursor: move;
+            }
+            /* 关闭按钮 */
+            #close {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                font-weight: normal;
+                display: block;
+                width: 50px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+                border-radius: 20px;
+                color: #000102;
+            }
+
+            #close:hover {
+                background-color: #52699e;
+                cursor: pointer;
+            }
+            /* 输入框 */
+            #box input {
+                width: 200px;
+                height: 25px;
+                border-radius: 25px;
+                border: none;
+                outline: none;
+                padding-left: 20px;
+                background-color: #ffffff;
+                color: rgb(17, 16, 16);
+            }
+
+            #box input::-webkit-input-placeholder {
+                color: rgb(255, 255, 255);
+                opacity: 0.4;
+            }
+
+            #box input:first-child {
+                margin-bottom: 20px;
+            }
+
+            #box #login {
+                cursor: pointer;
+                width: 300px;
+                height: 30px;
+                background-color: #f5f5f5;
+            }
+
+            #box #login:hover {
+                background-color: #e6e9e9;
+            }
+    </style>
+
+    <script>
+        function my$(id) {
+            return document.getElementById(id);
+            }
+        function getPage(e) {
+            var pageX = e.pageX || e.clientX + getScroll().scrollLeft;
+            var pageY = e.pageY || e.clientY + getScroll().scrollTop;
+            return {
+                pageX: pageX,
+                pageY: pageY
+            }
+<!--        function btnclicked() {-->
+<!--            var newPassword = document.getElementById("newPassword").value;-->
+<!--            var confirmNew = document.getElementById("confirmNew").value;-->
+<!--            if(newPassword != confirmNew) {-->
+<!--                alert("Entered different password!");-->
+<!--            } else {-->
+<!--                sendJson(newPassword);-->
+<!--            }-->
+<!--        }-->
+<!--        function sendJson() {-->
+<!--            var-->
+<!--        }-->
+    </script>
+    
+  </head>
+  
+  <body> 
+  
+     <h1>User Profile</h1>
+     
+	 <div>
+        <p th:text="'Username: '+${username}">Username:</p>
+        <p th:text="'First Name: '+${firstName}">First Name:</p>
+        <p th:text="'Last Name: '+${lastName}">Last Name:</p>
+        <p>
+            <input type="button" id="open" value="Change Password">
+            <div id="container">
+                <div id="hidden"></div>
+                <div id="box">
+                    <strong id="close">Close</strong>
+                    <span>New Password：<input type="Password" id="newPassword" placeholder="Enter new password"></span>
+                    <span>Confirm Password：<input type="password" id="confirmNew" placeholder="Confirm password"></span>
+                    <input type="button" value="OK" id="login">
+                </div>
+            </div>
+            <script>
+                var open = my$('open');
+                var box = my$('box');
+                var hidden = my$('hidden');
+                var close = my$('close');
+                open.onclick = function () {
+                    box.style.display = 'flex';
+                    hidden.style.display = 'block';
+                }
+                close.onclick = function () {
+                    box.style.display = 'none';
+                    hidden.style.display = 'none';
+                    // 关闭后恢复box到原来的默认位置
+                    box.style.top = '200px';
+                    box.style.left = '';
+                }
+                box.onmousedown = function (e) {
+                    e = e || window.event;
+                    // 盒子的位置
+                    var x = getPage(e).pageX - box.offsetLeft;
+                    var y = getPage(e).pageY - box.offsetTop;
+                    document.onmousemove = function (e) {
+                        e = e || window.event;
+                        box.style.left = getPage(e).pageX - x + 'px';
+                        box.style.top = getPage(e).pageY - y + 'px';
+                    }
+                }
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                }
+            </script>
+            
+        </p>
+        <div>
+            <p>My favourite: </p>
+            <p th:text="${myFavourite}">No favourite yet!</p>
+            <p>My Audiobooks: </p>
+            <p th:text="${myAudiobooks}">No audiobook uploaded yet!</p>
+     </div>
+
+     <form>
+		<p>
+	     Upload audio file：
+        <a href="audiobook.html" target ="_blank"><input type="button" value='Upload'></a>
+        </p>
+     </form>
+  
+  </body>
+  
+ </html>

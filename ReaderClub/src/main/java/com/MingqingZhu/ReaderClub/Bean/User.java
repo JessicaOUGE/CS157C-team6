@@ -1,7 +1,8 @@
 package com.MingqingZhu.ReaderClub.Bean;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.ArrayList;
 
 @Document(collection = "User")
 public class User {
@@ -10,6 +11,8 @@ public class User {
     private String password;
     private String lastName;
     private String gender;
+    private ArrayList<String> myFavourite;
+    private ArrayList<String> myAudiobooks;
 
     public User() {
     }
@@ -52,6 +55,22 @@ public class User {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public ArrayList<String> getMyFavourite() {
+        return myFavourite;
+    }
+
+    public void setMyFavourite(ArrayList<String> myFavourite) {
+        this.myFavourite = myFavourite;
+    }
+
+    public ArrayList<String> getMyAudiobooks() {
+        return myAudiobooks;
+    }
+
+    public void setMyAudiobooks(ArrayList<String> myAudiobooks) {
+        this.myAudiobooks = myAudiobooks;
     }
 
     @Override

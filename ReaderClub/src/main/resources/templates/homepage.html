@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -63,7 +63,7 @@
             <div class="upload">
                 <div class="parent">
                     <div class="upload-button">
-                        <p>Upload</p>
+                        <a th:href="@{'/details/'+${username}}" class="userDetails" th:text="'Hi, '+${username}"></a>
                     </div>
                     <div class="upload-angle">
                         <img src ="./pics/home_images/selectAngle.png" alt = "trangle">
