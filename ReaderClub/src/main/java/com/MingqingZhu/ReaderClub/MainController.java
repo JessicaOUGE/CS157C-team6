@@ -42,6 +42,15 @@ public class MainController {
         return "user";
     }
 
+    @PostMapping("/details")
+    public String changePassword(@RequestBody String passwordNusername) {
+        String[] dataList = passwordNusername.split(",");
+        String username = dataList[1];
+        String newPassword = dataList[0];
+        userDao.updatePassword(username,newPassword);
+        return "user";
+    }
+
     @GetMapping("/sign_up")
     public String signUp() {
         return "sign_up";

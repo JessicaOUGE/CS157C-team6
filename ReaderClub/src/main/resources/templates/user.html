@@ -127,18 +127,7 @@
                 pageX: pageX,
                 pageY: pageY
             }
-<!--        function btnclicked() {-->
-<!--            var newPassword = document.getElementById("newPassword").value;-->
-<!--            var confirmNew = document.getElementById("confirmNew").value;-->
-<!--            if(newPassword != confirmNew) {-->
-<!--                alert("Entered different password!");-->
-<!--            } else {-->
-<!--                sendJson(newPassword);-->
-<!--            }-->
-<!--        }-->
-<!--        function sendJson() {-->
-<!--            var-->
-<!--        }-->
+        }
     </script>
     
   </head>
@@ -159,10 +148,10 @@
                     <strong id="close">Close</strong>
                     <span>New Password：<input type="Password" id="newPassword" placeholder="Enter new password"></span>
                     <span>Confirm Password：<input type="password" id="confirmNew" placeholder="Confirm password"></span>
-                    <input type="button" value="OK" id="login">
+                    <input type="button" value="OK" onclick="btnclicked()" id="login">
                 </div>
             </div>
-            <script>
+            <script th:inline="javascript">
                 var open = my$('open');
                 var box = my$('box');
                 var hidden = my$('hidden');
@@ -191,6 +180,34 @@
                 }
                 document.onmouseup = function () {
                     document.onmousemove = null;
+                }
+                function btnclicked() {
+                    var newPassword = document.getElementById("newPassword").value;
+                    var confirmNew = document.getElementById("confirmNew").value;
+                    var username = [[${username}]];
+                    if(newPassword != confirmNew) {
+                        alert("Entered different password!");
+                    } else {
+                        var data = newPassword + "," + username;
+                        console.log(data);
+                        sendJson(data);
+                    }
+                }
+                function sendJson(data) {
+                    var xmlhttp;
+                    if(window.XMLHttpRequest) {
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange = function () {
+                        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            console.log("success");
+                        }
+                    };
+                    xmlhttp.open("POST","/details", true);
+                    xmlhttp.send(data);
+                    alert("Password changed!");
                 }
             </script>
             

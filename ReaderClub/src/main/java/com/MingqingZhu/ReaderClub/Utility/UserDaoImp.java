@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -28,5 +29,12 @@ public class UserDaoImp implements UserDao{
     @Override
     public void deleteByUsername(String username) {
 
+    }
+
+    @Override
+    public void updatePassword(String username, String newPassword) {
+        Query query = new Query(Criteria.where("username").is(username));
+        Update update = Update.update("password", newPassword);
+        mongoTemplate.updateFirst(query, update, User.class);
     }
 }
