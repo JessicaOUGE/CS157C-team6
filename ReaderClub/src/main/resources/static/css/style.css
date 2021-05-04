@@ -23,10 +23,10 @@
     font-family: Arial;
     margin: 0 auto; /* Center website */
     max-width: 800px; /* Max width */
-    padding: 20px; 
-    background-image: url('images/background.png');
+    padding: 20px;
+    /*background-image: url('./static/pics/book_images/background.png');*/
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-size: 100% 100%;
   }
   
