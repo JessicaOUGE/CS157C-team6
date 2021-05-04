@@ -1,5 +1,6 @@
 package com.MingqingZhu.ReaderClub.Utility;
 
+import com.MingqingZhu.ReaderClub.Bean.Book;
 import com.MingqingZhu.ReaderClub.Bean.User;
 
 public interface UserDao {

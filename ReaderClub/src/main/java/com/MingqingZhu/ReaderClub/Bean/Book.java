@@ -1,13 +1,22 @@
 package com.MingqingZhu.ReaderClub.Bean;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.ArrayList;
+
+@Document(collection = "Book")
 public class Book {
     private String title;
-    private String author;
-    private String uploder;
-    private String Type;
+    private ArrayList<String> author;
+    private String uploader;
+    private String type;
     private String description;
     private String coverImg;
     private String audio;
+
+    public Book() {
+
+    }
 
     public String getTitle() {
         return title;
@@ -17,28 +26,28 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public ArrayList<String> getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(ArrayList<String> author) {
         this.author = author;
     }
 
-    public String getUploder() {
-        return uploder;
+    public String getUploader() {
+        return uploader;
     }
 
-    public void setUploder(String uploder) {
-        this.uploder = uploder;
+    public void setUploader(String uploader) {
+        this.uploader = uploader;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     public String getDescription() {

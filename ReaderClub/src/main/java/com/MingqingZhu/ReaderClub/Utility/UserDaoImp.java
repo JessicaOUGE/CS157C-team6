@@ -1,5 +1,6 @@
 package com.MingqingZhu.ReaderClub.Utility;
 
+import com.MingqingZhu.ReaderClub.Bean.Book;
 import com.MingqingZhu.ReaderClub.Bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -37,4 +38,5 @@ public class UserDaoImp implements UserDao{
         Update update = Update.update("password", newPassword);
         mongoTemplate.updateFirst(query, update, User.class);
     }
+
 }

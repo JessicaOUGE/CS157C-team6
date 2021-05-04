@@ -472,7 +472,7 @@
                                 '<div class="mask"></div>' +
                             '</div>' +
                         '</div>' +
-                        '<a href="/bookpage" class="title">'+item.name+'</a>' +
+                        '<a href="/bookpage/' + item.name + '" class="title">'+item.name+'</a>' +
                         '<div class="intro">' +
                             '<p class="play-btn"></p>' +
                             '<a href="#">'+item.intro+'</a>' +

@@ -1,7 +1,9 @@
 package com.MingqingZhu.ReaderClub;
 
 
+import com.MingqingZhu.ReaderClub.Bean.Book;
 import com.MingqingZhu.ReaderClub.Bean.User;
+import com.MingqingZhu.ReaderClub.Utility.BookDao;
 import com.MingqingZhu.ReaderClub.Utility.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,8 @@ public class MainController {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private BookDao bookDao;
 
     @GetMapping("/")
     public String home() {
@@ -56,8 +60,15 @@ public class MainController {
         return "sign_up";
     }
 
-    @GetMapping("/bookpage")
-    public String showBook() {
+    @RequestMapping("/bookpage/{bookname}")
+    public String showBook(@PathVariable(name="bookname") String bookname) {
+        System.out.println(bookname);
+        Book book = bookDao.findByBookName(bookname);
+        System.out.println(book.getTitle());
+        System.out.println(book.getAuthor());
+        System.out.println(book.getUploader());
+        System.out.println(book.getType());
+        System.out.println(book.getCoverImg());
         return "bookPage";
     }
 
