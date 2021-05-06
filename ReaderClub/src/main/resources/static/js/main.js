@@ -380,15 +380,6 @@
                 })
             });
         }
-        //Click search table，show dropped down
-        function controlSearch () {
-            document.querySelector("#search").addEventListener("mouseover", function(ev) {
-                this.querySelector("ul").style.display = "block";
-            });
-            document.querySelector("#search").addEventListener("mouseout", function(ev) {
-                this.querySelector("ul").style.display = "none";
-            });
-        }
         //click open，show result
         function slideUpDown () {
             var flags = 1;
@@ -450,7 +441,6 @@
             })
         }
 
-        controlSearch ();
         addEventListeners(array);
         controlLeftMenu();
         slideUpDown ();
@@ -501,6 +491,8 @@
         }
         showPage(100);
     }
+
+
     //page number controll
     function controlPage (currentPage) { }
     function init () {
@@ -517,3 +509,25 @@ window.onload = function () {
     param.init();
     param.initEvents();
 };
+
+function clicked() {
+    console.log("clicked")
+    var keyword = document.getElementById("sKeyword").value;
+    keyword = keyword.replace(/(^\s*)|(\s*$)/g, '');
+    keyword = "k="+keyword;
+    var xmlhttp;
+    if(window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            console.log("success");
+        }
+    };
+    var targeturl= "/welcome/"+keyword;
+    xmlhttp.open("GET",targeturl, true);
+    xmlhttp.send(keyword);
+    window.location.href=targeturl;
+}

@@ -35,6 +35,13 @@ public class MainController {
         }
     }
 
+    @RequestMapping(value="/welcome/{keyword}", method=RequestMethod.GET)
+    public String doSearch(@PathVariable(name="keyword") String keyword, Model model) {
+        System.out.println(keyword);
+        model.addAttribute("username",keyword);
+        return "homepage";
+    }
+
     @RequestMapping("/details/{username}")
     public String details(@PathVariable(name="username") String username, Model model) {
         User user = userDao.findByUsername(username);

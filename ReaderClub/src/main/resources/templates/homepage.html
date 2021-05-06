@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <script type="text/javascript" src="./js/main.js" async></script>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <script type="text/javascript" th:src="@{/js/main.js}" async></script>
     <base target="_blank">
 
 </head>
@@ -22,43 +22,13 @@
                 </ul>
             </div>
             <!--Searching-->
+
             <div class="search" id="search">
-                <input type="text" placeholder="search">
-                <img src="./pics/home_images/glass.png" alt="">
-                <!--hidden dropdown list-->
-                <ul>
-                    <a href="#">
-                        <li>
-                            <img src="./pics/home_images/story.png" alt="" title="">
-                            <p>Bedtime Story</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="./pics/home_images/story.png" alt="" title="">
-                            <p>History</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="./pics/home_images/story.png" alt="" title="">
-                            <p>Talk Show</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="./pics/home_images/story.png" alt="" title="">
-                            <p>world famous</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="./pics/home_images/story.png" alt="" title="">
-                            <p>Business</p>
-                        </li>
-                    </a>
-                </ul>
+                <input type="text" id="sKeyword" placeholder="search">
+                <img th:src="@{/pics/home_images/glass.png}" alt="">
+                <input type="button" id="sButton" onclick="clicked()" value="    " style="width:28px; height:23px"/>
             </div>
+
             <!--Upload-->
             <div class="upload">
                 <div class="parent">
@@ -66,7 +36,7 @@
                         <a th:href="@{'/details/'+${username}}" class="userDetails" th:text="'Hi, '+${username}"></a>
                     </div>
                     <div class="upload-angle">
-                        <img src ="./pics/home_images/selectAngle.png" alt = "trangle">
+                        <img th:src ="@{/pics/home_images/selectAngle.png}" alt = "trangle">
                     </div>
                     <!--hidden dropdown list under the upload-->
                     <ul class ="upload-select">
@@ -105,7 +75,7 @@
 <div class="content">
     <div class="m-container">
         <div class="top-menu">
-            <img src="./pics/home_images/listen.PNG" alt="listen to your favorite books">
+            <img th:src="@{/pics/home_images/listen.PNG}" alt="listen to your favorite books">
             <ul id="easy-select">
                 <a href="#"><li class="active">Hot</li></a>
                 <a href="#"><li>Recent</li></a>

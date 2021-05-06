@@ -21,11 +21,8 @@ public class BookDaoImp implements BookDao{
 
     @Override
     public Book findByBookName(String bookname) {
-        System.out.println(bookname);
         Query query = new Query(Criteria.where("title").is(bookname));
         Book book = mongoTemplate.findOne(query, Book.class);
-        System.out.println("The Book is:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println(book);
         return book;
     }
 }
