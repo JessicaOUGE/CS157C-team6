@@ -510,24 +510,6 @@ window.onload = function () {
     param.initEvents();
 };
 
-function clicked() {
-    console.log("clicked")
-    var keyword = document.getElementById("sKeyword").value;
-    keyword = keyword.replace(/(^\s*)|(\s*$)/g, '');
-    keyword = "k="+keyword;
-    var xmlhttp;
-    if(window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function () {
-        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log("success");
-        }
-    };
-    var targeturl= "/welcome/"+keyword;
-    xmlhttp.open("GET",targeturl, true);
-    xmlhttp.send(keyword);
-    window.location.href=targeturl;
+function getBooks() {
 }
+
