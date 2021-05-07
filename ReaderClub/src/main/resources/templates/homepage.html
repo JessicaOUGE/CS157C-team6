@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ReaderClub</title>
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
     <script type="text/javascript" th:src="@{/js/main.js}" async></script>
     <base target="_blank">
@@ -49,6 +49,12 @@
                     xmlhttp.open("GET",targeturl, true);
                     xmlhttp.send(keyword);
                     window.location.href=targeturl;
+                }
+                var books = [[${books}]];
+                var bookList = []
+                for(var i=0; i<books.length; i++) {
+                    var tmp = JSON.parse(books[i]);
+                    bookList.push(tmp);
                 }
             </script>
 
@@ -116,9 +122,9 @@
             <div class="main-content">
                 <div class="books" id="main-content">
                 </div>
-                <div class="page" id="page">
-                    <ul></ul>
-                </div>
+            </div>
+            <div class="page" id="page">
+                <ul></ul>
             </div>
         </div>
     </div>

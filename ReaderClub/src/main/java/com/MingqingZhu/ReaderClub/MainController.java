@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.html.HTMLDocument;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,22 +38,28 @@ public class MainController {
     }
 
     @GetMapping("/welcome")
-    public String welcome(Model model) {
+    public String welcome(Model model) throws Exception {
+        List<Book> results = bookDao.getTwRandom();
+        List<String> books = bookToJsonString(results);
         model.addAttribute("username","Login");
         model.addAttribute("link","/");
+        model.addAttribute("books", books);
         return "homepage";
     }
 
     @PostMapping("/welcome")
-    public String doLogin(@RequestParam(name="username")String username, @RequestParam(name="password")String password, Model model, HttpServletRequest request) {
+    public String doLogin(@RequestParam(name="username")String username, @RequestParam(name="password")String password, Model model, HttpServletRequest request) throws Exception {
         User tmp = userDao.findByUsername(username);
 //        String sessionId = request.getSession().getId();
 //        System.out.println(sessionId);
         if(tmp.getPassword().equals(password)) {
             String greeting = "Hi, " + username;
             String link = "/details/" + username;
+            List<Book> results = bookDao.getTwRandom();
+            List<String> books = bookToJsonString(results);
             model.addAttribute("username",greeting);
             model.addAttribute("link",link);
+            model.addAttribute("books",books);
             return "homepage";
         } else {
             return "error";
@@ -62,17 +69,9 @@ public class MainController {
     @RequestMapping(value="/welcome/{keyword}", method=RequestMethod.GET)
     public String doSearch(@PathVariable(name="keyword") String keyword, Model model) throws Exception {
         String key = keyword.substring(2,keyword.length());
-        System.out.println(key);
         List<Book> results = bookDao.searchByKeyword(key);
-        Iterator it = results.listIterator();
-        ObjectMapper objectMapper = new ObjectMapper();
-        while(it.hasNext()) {
-            Book tmp = (Book)it.next();
-            String json = objectMapper.writeValueAsString(tmp);
-            System.out.println(json);
-        }
-
-
+        List<String> books = bookToJsonString(results);
+        model.addAttribute("books",books);
         return "homepage";
     }
 
@@ -117,5 +116,22 @@ public class MainController {
     public String doSignUp(@RequestBody User user ) {
         userDao.save(user);
         return "Login";
+    }
+
+    @GetMapping("/upload")
+    public String doUpload() {
+        return "audiobook";
+    }
+
+    public static List<String> bookToJsonString(List<Book> books) throws Exception {
+        Iterator it = books.listIterator();
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<String> result = new ArrayList<>();
+        while(it.hasNext()) {
+            Book tmp = (Book)it.next();
+            String json = objectMapper.writeValueAsString(tmp);
+            result.add(json);
+        }
+        return result;
     }
 }

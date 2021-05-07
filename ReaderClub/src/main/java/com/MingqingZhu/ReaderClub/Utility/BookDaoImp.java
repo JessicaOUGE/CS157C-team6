@@ -36,4 +36,14 @@ public class BookDaoImp implements BookDao{
         List<Book> books = mongoTemplate.find(query, Book.class);
         return books;
     }
+
+    @Override
+    public List<Book> getTwRandom() {
+        String tmp = "^.*"+""+".*$";
+        Pattern pattern = Pattern.compile(tmp,Pattern.CASE_INSENSITIVE);
+        Query query = Query.query(Criteria.where("title").regex(pattern));
+        query.limit(12);
+        List<Book> books = mongoTemplate.find(query, Book.class);
+        return books;
+    }
 }

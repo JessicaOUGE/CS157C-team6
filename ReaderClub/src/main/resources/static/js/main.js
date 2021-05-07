@@ -113,213 +113,6 @@
             ]
         }
     ];
-    var bookData = [
-        {
-            name: "50 Classic Children Short Stories",
-            playCount: 663814,
-            intro: "The best bedtime story",
-            imgUrl: "https://m.media-amazon.com/images/I/51fcENE5o0L._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: []
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "The Craft",
-            playCount: 720089,
-            intro: "How the Freemasons Made the Modern World",
-            imgUrl: "https://m.media-amazon.com/images/I/51xhe3Y-9HL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "诗歌",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "The Struggle is Real",
-            playCount: 260616,
-            intro: "Getting Better at Life, Stronger in Faith",
-            imgUrl: "https://m.media-amazon.com/images/I/41yU74dVDHL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "Psychopath Free: Expanded Edition",
-            playCount: 260616,
-            intro: "Recovering from Emotionally Abusive",
-            imgUrl: "https://m.media-amazon.com/images/I/41Cs5gI6WZL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: ["诗歌词赋","现代诗"]
-                }
-            ]
-
-        },
-        {
-            name: "Live Free or Die",
-            playCount: 1841879,
-            intro: "America (and the World) on the Brink",
-            imgUrl: "https://m.media-amazon.com/images/I/51tz0xaXfYL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "52 Ways to Live a Kick-Ass Life",
-            playCount: 2959157,
-            intro: "BS-Free Wisdom to Ignite Your Inner Badass",
-            imgUrl: "https://m.media-amazon.com/images/I/51ZGmjjHpXL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "Cluttered Mess to Organized Success",
-            playCount: 389326001,
-            intro: "Decluttering Your Home and Life ",
-            imgUrl: "https://m.media-amazon.com/images/I/51zxw8aY68L._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "The Best Intelligent Investor",
-            playCount: 1635884,
-            intro: "Beginner’s Guide for a Foundation in Personal Finance",
-            imgUrl: "https://m.media-amazon.com/images/I/51+fKN8x01L._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "The Free Lunch",
-            playCount: 1491418,
-            intro: "By: Spider Robinson",
-            imgUrl: "https://m.media-amazon.com/images/I/51JjhKzNn3L._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "Freefall to Fly",
-            playCount: 46172983,
-            intro: "A Breathtaking Journey Toward a Life of Meaning",
-            imgUrl: "https://m.media-amazon.com/images/I/61hXuqdQYnL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "The Worry-Free Mind",
-            playCount: 43346974,
-            intro: "Train Your Brain, Calm the Stress Spin Cycle",
-            imgUrl: "https://m.media-amazon.com/images/I/51x4H1IhUVL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-        {
-            name: "Alice's Adventures in Wonderland",
-            playCount: 43346974,
-            intro: "Have a nice dream",
-            imgUrl: "https://m.media-amazon.com/images/I/51ZqipZ77PL._SL500_.jpg",
-            type: [
-                {
-                    main: "",
-                    junior: [""]
-                },
-                {
-                    main: "",
-                    junior: [""]
-                }
-            ]
-
-        },
-
-    ];
     //initial sidebar
     function getMenu () {
         var str1 = "";
@@ -448,12 +241,12 @@
     //initial right side 
     function getContent () {
         var str = "";
-        bookData.forEach(function (item) {
+        bookList.forEach(function (item) {
             str += '<div class="book-item">' +
                         '<div class="album-item">' +
                             '<div class="album">' +
-                                '<img src="'+item.imgUrl+'" alt="">' +
-                                '<div class="play-count">'+item.playCount+'</div>' +
+                                '<img src="'+item.coverImg+'" alt="">' +
+                                '<div class="play-count">'+item.author+'</div>' +
                             '</div>' +
                             '<div class="album-decorate">' +
                                 '<div class="border-one"></div>' +
@@ -462,10 +255,10 @@
                                 '<div class="mask"></div>' +
                             '</div>' +
                         '</div>' +
-                        '<a href="/bookpage/' + item.name + '" class="title">'+item.name+'</a>' +
+                        '<a href="/bookpage/' + item.title + '" class="title">'+item.title+'</a>' +
                         '<div class="intro">' +
                             '<p class="play-btn"></p>' +
-                            '<a href="#">'+item.intro+'</a>' +
+                            '<a href="#">'+item.description+'</a>' +
                         '</div>' +
                     '</div>'
         });
@@ -510,6 +303,4 @@ window.onload = function () {
     param.initEvents();
 };
 
-function getBooks() {
-}
 

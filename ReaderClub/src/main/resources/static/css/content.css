@@ -158,6 +158,7 @@
 /*左侧菜单栏begin*/
 /*右侧主要内容区begin*/
 .main-content {
+    position:relative;
     max-width: 780px;
     margin-top: 1px;
     float: left;
@@ -281,6 +282,9 @@
     background-origin: border-box;
 }
 .bottom .page {
+    position:absolute;
+    top: 939px;
+    left: 608px;
     padding-bottom: 30px;
     padding-top: 30px;
     color: #666;

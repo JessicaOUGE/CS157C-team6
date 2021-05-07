@@ -9,4 +9,5 @@ public interface BookDao {
     void save(Book book);
     Book findByBookName(String bookname);
     List<Book> searchByKeyword(String bookname);
+    List<Book> getTwRandom();
 }
