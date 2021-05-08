@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Book Details</title>
         <link href="css/style.css" rel="stylesheet">
@@ -50,15 +51,15 @@
                     </div>
                     <div class="col-md-7">
                         <p class="Audiobooks text-center">Audio</p>
-                        <h2>The Craft</h2>
-                        <p><b>By:</b> John Dickie</p>
+                        <h2 th:text="${title}">The Craft</h2>
+                        <p th:text="${author}"><b>By:</b> John Dickie</p>
                         <p><b>Narrated by:</b> Simon Slater</p>
-                        <p><b>Type:</b> Novel</p>
-                        <p><b>Description:</b> Founded in London in 1717 as a way of binding men in fellowship,
+                        <p th:text="${type}"><b>Type:</b> Novel</p>
+                        <p th:text="${description}"><b>Description:</b> Founded in London in 1717 as a way of binding men in fellowship,
                             Freemasonry proved so addictive that within two decades it had spread across the globe.</p>
                         <p><input type="button" onclick="" value="Like" /></p>
                         <p><b>Chapter 1</b> <audio controls="controls" height="100" width="100">
-                            <source src="./audio/StarsAlign.mp3" type="audio/mp3" />
+                            <source th:src="@{${audioPath}}" type="audio/mp3" />
                           <embed height="100" width="100" src="css/audio/StarsAlign.mp3" />
                         </audio>
                         </p>

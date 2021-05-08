@@ -1,12 +1,17 @@
-package com.MingqingZhu.ReaderClub.Utility;
+package com.MingqingZhu.ReaderClub.Util;
 
 import com.MingqingZhu.ReaderClub.Bean.Book;
+import com.mongodb.client.gridfs.model.GridFSFile;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.gridfs.GridFsResource;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -15,10 +20,12 @@ public class BookDaoImp implements BookDao{
 
     @Autowired
     private MongoTemplate mongoTemplate;
+    @Autowired
+    private GridFsTemplate gridFsTemplate;
 
     @Override
     public void save(Book book) {
-
+        mongoTemplate.insert(book);
     }
 
     @Override
@@ -46,4 +53,5 @@ public class BookDaoImp implements BookDao{
         List<Book> books = mongoTemplate.find(query, Book.class);
         return books;
     }
+
 }

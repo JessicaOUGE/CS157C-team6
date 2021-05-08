@@ -1,8 +1,7 @@
-package com.MingqingZhu.ReaderClub.Utility;
+package com.MingqingZhu.ReaderClub.Util;
 
 import com.MingqingZhu.ReaderClub.Bean.Book;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface BookDao {

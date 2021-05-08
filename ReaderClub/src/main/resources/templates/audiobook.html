@@ -29,24 +29,24 @@
   
      <h1>Upload Audio Book</h1><p></p>
      
-        <form method="post"  action="uploading" enctype="multipart/form-data">
+        <form method="post"  action="upload" enctype="multipart/form-data">
 
             <div>
                 <label for="title"> Title：</label><p></p>
-                <input type="text" id="title"></div>
+                <input type="text" id="title" name="title"></div>
             <div>
                 <label for="authorsname"> Author's name：</label><p></p>
-                <input type="text" id="authorsname"></div>
+                <input type="text" id="authorsname" name="author"></div>
             <div>
                 <label for="uploader"> Uploader: </label><p></p>
-                <input type="text" id="uploader"></div>
+                <input type="text" id="uploader" name="uploader"></div>
             <div>
                 <label for="type"> Type： </label><p></p>
-                <input type="text" id="type"></div>
+                <input type="text" id="type" name="type"></div>
             <p></p>
             <div>
                 <label for="Description"> Description: </label><p></p>
-                <textarea name="commet"rows=5 cols=60  id="Description">
+                <textarea rows=5 cols=60  id="Description" name="description">
                 </textarea></div>
             <p></p>
             <div>
@@ -54,12 +54,12 @@
                     <i class="fa fa-plus fa-lg"></i>
                 </label>
                 <p></p>
-                <input id="cover" type="file" accept="image/*"/></div>
+                <input id="cover" type="file" accept="image/*" name="cover"/></div>
                 <div id="preview_box2"></div>
             </p>
 
             <p>
-             Upload audio file：<input type="file" name="filename"></p>
+             Upload audio file：<input type="file" name="audio"></p>
             <p>
             <input type="submit"value="submit">
               <input type="reset"value="clear"></p>

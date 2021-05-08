@@ -3,25 +3,25 @@ package com.MingqingZhu.ReaderClub;
 
 import com.MingqingZhu.ReaderClub.Bean.Book;
 import com.MingqingZhu.ReaderClub.Bean.User;
-import com.MingqingZhu.ReaderClub.Utility.BookDao;
-import com.MingqingZhu.ReaderClub.Utility.UserDao;
+import com.MingqingZhu.ReaderClub.Util.BookDao;
+import com.MingqingZhu.ReaderClub.Util.FileUtil;
+import com.MingqingZhu.ReaderClub.Util.UserDao;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import netscape.javascript.JSObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.swing.text.html.HTMLDocument;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
-import static org.springframework.data.mongodb.core.ReactiveMongoContext.getSession;
 
 @Controller
 public class MainController {
@@ -30,6 +30,8 @@ public class MainController {
     private UserDao userDao;
     @Autowired
     private BookDao bookDao;
+    @Autowired
+    private GridFsTemplate gridFsTemplate;
 
     @GetMapping("/")
     public String home() {
@@ -101,14 +103,15 @@ public class MainController {
     }
 
     @RequestMapping("/bookpage/{bookname}")
-    public String showBook(@PathVariable(name="bookname") String bookname) {
+    public String showBook(@PathVariable(name="bookname") String bookname, Model model) {
         System.out.println(bookname);
         Book book = bookDao.findByBookName(bookname);
-        System.out.println(book.getTitle());
-        System.out.println(book.getAuthor());
-        System.out.println(book.getUploader());
-        System.out.println(book.getType());
-        System.out.println(book.getCoverImg());
+        model.addAttribute("title",book.getTitle());
+        model.addAttribute("author", book.getAuthor());
+        model.addAttribute("type",book.getType());
+        model.addAttribute("description",book.getDescription());
+        model.addAttribute("audioPath", book.getAudio());
+
         return "bookPage";
     }
 
@@ -118,8 +121,32 @@ public class MainController {
         return "Login";
     }
 
-    @GetMapping("/upload")
-    public String doUpload() {
+    @GetMapping("/uploadPage")
+    public String goUpload() {
+        return "audiobook";
+    }
+
+    @PostMapping("/upload")
+    public String handleUpload(@RequestParam("title")String title, @RequestParam("author")String author, @RequestParam("uploader")String uploader, @RequestParam("type")String type, @RequestParam("description")String description, @RequestParam("cover")MultipartFile cover, @RequestParam("audio")MultipartFile audio){
+        Book tmp = new Book();
+        tmp.setTitle(title);
+        ArrayList<String> authors = new ArrayList<String>(Arrays.asList(author.split("\\s*,\\s*")));
+        tmp.setAuthor(authors);
+        tmp.setUploader(uploader);
+        tmp.setType(type);
+        tmp.setDescription(description);
+        String audioFileName = audio.getOriginalFilename();
+        String audioPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/audio/";
+        try {
+            FileUtil.fileupload(audio.getBytes(), audioPath, audioFileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String virtureAudioPath = "/audio/" + audioFileName;
+        tmp.setAudio(virtureAudioPath);
+        bookDao.save(tmp);
+
+
         return "audiobook";
     }
 

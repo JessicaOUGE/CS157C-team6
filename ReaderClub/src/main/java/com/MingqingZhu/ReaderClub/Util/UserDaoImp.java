@@ -1,6 +1,5 @@
-package com.MingqingZhu.ReaderClub.Utility;
+package com.MingqingZhu.ReaderClub.Util;
 
-import com.MingqingZhu.ReaderClub.Bean.Book;
 import com.MingqingZhu.ReaderClub.Bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
