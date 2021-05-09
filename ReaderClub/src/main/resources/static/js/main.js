@@ -245,8 +245,8 @@
             str += '<div class="book-item">' +
                         '<div class="album-item">' +
                             '<div class="album">' +
-                                '<img src="'+item.coverImg+'" alt="">' +
-                                '<div class="play-count">'+item.author+'</div>' +
+                                '<img src="'+item.coverImg+'" alt="" height="145" width="145" />' +
+                                '<div class="play-count"></div>' +
                             '</div>' +
                             '<div class="album-decorate">' +
                                 '<div class="border-one"></div>' +
@@ -258,7 +258,7 @@
                         '<a href="/bookpage/' + item.title + '" class="title">'+item.title+'</a>' +
                         '<div class="intro">' +
                             '<p class="play-btn"></p>' +
-                            '<a href="#">'+item.description+'</a>' +
+                            '<a href="/bookpage/' + item.title + '">'+item.author+'</a>' +
                         '</div>' +
                     '</div>'
         });

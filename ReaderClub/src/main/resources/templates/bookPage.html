@@ -30,32 +30,18 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./pics/book_images/TheCraft.jpeg" class="d-block w-100" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./pics/book_images/TheCraft.jpeg" class="d-block w-100" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./pics/book_images/TheCraft.jpeg" class="d-block w-100" alt="Third slide">
+                                <img th:src="@{${coverImg}}" class="d-block w-100" alt="First slide">
                             </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                            </button>
                         </div>
                     </div>
                     <div class="col-md-7">
                         <p class="Audiobooks text-center">Audio</p>
-                        <h2 th:text="${title}">The Craft</h2>
-                        <p th:text="${author}"><b>By:</b> John Dickie</p>
-                        <p><b>Narrated by:</b> Simon Slater</p>
-                        <p th:text="${type}"><b>Type:</b> Novel</p>
-                        <p th:text="${description}"><b>Description:</b> Founded in London in 1717 as a way of binding men in fellowship,
+                        <h2 th:text="'Title: '+${title}">The Craft</h2>
+                        <p th:text="'Author: '+${author}"><b>By:</b> John Dickie</p>
+                        <p th:text="'Narrated by: '+${uploader}"><b>Narrated by:</b> Simon Slater</p>
+                        <p th:text="'Type: '+${type}"><b>Type:</b> Novel</p>
+                        <p th:text="'Description: '+${description}"><b>Description:</b> Founded in London in 1717 as a way of binding men in fellowship,
                             Freemasonry proved so addictive that within two decades it had spread across the globe.</p>
                         <p><input type="button" onclick="" value="Like" /></p>
                         <p><b>Chapter 1</b> <audio controls="controls" height="100" width="100">

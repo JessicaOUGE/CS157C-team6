@@ -18,10 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class MainController {
@@ -72,6 +69,7 @@ public class MainController {
     public String doSearch(@PathVariable(name="keyword") String keyword, Model model) throws Exception {
         String key = keyword.substring(2,keyword.length());
         List<Book> results = bookDao.searchByKeyword(key);
+        results = results.subList(0,12);
         List<String> books = bookToJsonString(results);
         model.addAttribute("books",books);
         return "homepage";
@@ -104,13 +102,14 @@ public class MainController {
 
     @RequestMapping("/bookpage/{bookname}")
     public String showBook(@PathVariable(name="bookname") String bookname, Model model) {
-        System.out.println(bookname);
         Book book = bookDao.findByBookName(bookname);
         model.addAttribute("title",book.getTitle());
         model.addAttribute("author", book.getAuthor());
         model.addAttribute("type",book.getType());
         model.addAttribute("description",book.getDescription());
         model.addAttribute("audioPath", book.getAudio());
+        model.addAttribute("uploader",book.getUploader());
+        model.addAttribute("coverImg",book.getCoverImg());
 
         return "bookPage";
     }
@@ -136,14 +135,25 @@ public class MainController {
         tmp.setType(type);
         tmp.setDescription(description);
         String audioFileName = audio.getOriginalFilename();
+        audioFileName = generateRandomName(audioFileName);
         String audioPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/audio/";
         try {
             FileUtil.fileupload(audio.getBytes(), audioPath, audioFileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String virtureAudioPath = "/audio/" + audioFileName;
-        tmp.setAudio(virtureAudioPath);
+        String virtualAudioPath = "/audio/" + audioFileName;
+        tmp.setAudio(virtualAudioPath);
+        String imgFileName = cover.getOriginalFilename();
+        imgFileName = generateRandomName(imgFileName);
+        String imgPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/pics/";
+        try {
+            FileUtil.fileupload(cover.getBytes(), imgPath, imgFileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String virtualImgPath = "/pics/" + imgFileName;
+        tmp.setCoverImg(virtualImgPath);
         bookDao.save(tmp);
 
 
@@ -160,5 +170,11 @@ public class MainController {
             result.add(json);
         }
         return result;
+    }
+
+    public static String generateRandomName(String origin) {
+        Random rand = new Random(300);
+        String newName = String.valueOf(rand.nextInt()) + origin;
+        return newName;
     }
 }
