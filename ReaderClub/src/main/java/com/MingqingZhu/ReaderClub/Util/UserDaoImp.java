@@ -43,7 +43,7 @@ public class UserDaoImp implements UserDao{
     @Override
     public void updateLikeList(String username, ArrayList<String> newList) {
         Query query = new Query(Criteria.where("username").is(username));
-        Update update = Update.update("myFavoutire", newList);
+        Update update = Update.update("myFavourite", newList);
         mongoTemplate.updateFirst(query, update, User.class);
     }
 }

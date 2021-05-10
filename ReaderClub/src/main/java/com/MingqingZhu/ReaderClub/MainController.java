@@ -44,7 +44,6 @@ public class MainController {
     @GetMapping("/welcome")
     public String welcome(Model model, HttpSession session) throws Exception {
         Session thisSession = sessionDao.findById(session.getId());
-        System.out.println(session.getId());
         if(thisSession == null) {
             model.addAttribute("username","Login");
             model.addAttribute("link","/");
@@ -145,6 +144,7 @@ public class MainController {
             User user = userDao.findByUsername(thisSession.getUserName());
             if(user.getMyFavourite().contains(bookname)) {
                 model.addAttribute("like", "Unlike");
+
             } else {
                 model.addAttribute("like", "Like");
             }
@@ -162,8 +162,7 @@ public class MainController {
     }
 
     @PostMapping("/bookpage/{bookname}")
-    public String getTitle(@PathVariable(name="bookname") String bookname, Model model, @RequestParam("weatherLike")String weatherLike, HttpSession session) {
-        System.out.println("~~~~~~~~~~~~~~weatherLike is: " + weatherLike);
+    public String getTitle(@PathVariable(name="bookname") String bookname, Model model, @RequestBody String weatherLike, HttpSession session) {
         Session thisSession = sessionDao.findById(session.getId());
         if(thisSession == null) {
             return "Login";
