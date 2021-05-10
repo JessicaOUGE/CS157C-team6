@@ -43,7 +43,7 @@
                         <p th:text="'Type: '+${type}"><b>Type:</b> Novel</p>
                         <p th:text="'Description: '+${description}"><b>Description:</b> Founded in London in 1717 as a way of binding men in fellowship,
                             Freemasonry proved so addictive that within two decades it had spread across the globe.</p>
-                        <p><input type="button" onclick="" value="Like" /></p>
+                        <p><input type="button" name="weatherLike" onclick="dolike()" th:value="${like}" /></p>
                         <p><b>Chapter 1</b> <audio controls="controls" height="100" width="100">
                             <source th:src="@{${audioPath}}" type="audio/mp3" />
                           <embed height="100" width="100" src="css/audio/StarsAlign.mp3" />
@@ -52,6 +52,28 @@
                     </div>
                 </div>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <script th:inline="javascript">
+                    function dolike() {
+                        var bookName = [[${title}]];
+                        console.log(bookName);
+                        var xmlhttp;
+                        if(window.XMLHttpRequest) {
+                            xmlhttp = new XMLHttpRequest();
+                        } else {
+                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xmlhttp.onreadystatechange = function () {
+                            if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                console.log("success");
+                            }
+                        };
+                        var target = "/bookpage/"+[[${title}]];
+                        xmlhttp.open("POST",target, true);
+                        xmlhttp.send(bookName);
+                        console.log("sent!");
+                        window.location.reload();
+                    }
+                </script>
 
     <span class="heading">User Rating</span>
     <span class="fa fa-star checked"></span>

@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 @Repository
 public class UserDaoImp implements UserDao{
 
@@ -38,4 +40,10 @@ public class UserDaoImp implements UserDao{
         mongoTemplate.updateFirst(query, update, User.class);
     }
 
+    @Override
+    public void updateLikeList(String username, ArrayList<String> newList) {
+        Query query = new Query(Criteria.where("username").is(username));
+        Update update = Update.update("myFavoutire", newList);
+        mongoTemplate.updateFirst(query, update, User.class);
+    }
 }
