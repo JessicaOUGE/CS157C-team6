@@ -1,2 +1,2 @@
-# CS157C_Team6_Project
+# Reader Club
 ## Using java spring gradle and MongoDB
