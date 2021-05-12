@@ -9,4 +9,5 @@ public interface SessionDao {
 
     Session findById(String id);
     void saveSession(Session session);
+    void deleteById(String id);
 }

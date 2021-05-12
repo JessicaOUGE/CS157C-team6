@@ -69,17 +69,9 @@
                     </div>
                     <!--hidden dropdown list under the upload-->
                     <ul class ="upload-select">
-                        <a href="#">
-                            <li>
-                                <form id="upform" enctype="multipart/form-data" style="display: none;">
-                                    <div class="form-group">
-                                        <label for="upteainput">upload file</label>
-                                        <input id="upteainput" name="upfile" type="file" class="form-control-file">
-                                    </div>
-                                </form>
-                                <botton id="uptea" type="button" class="btn btn-primary"></botton>
-                            </li>
-                        </a>
+                        <form action="/" method="post">
+                            <input type="submit" th:value="${dropdown}"></input>
+                        </form>
                     </ul>
                 </div>
             </div>

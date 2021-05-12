@@ -46,4 +46,11 @@ public class UserDaoImp implements UserDao{
         Update update = Update.update("myFavourite", newList);
         mongoTemplate.updateFirst(query, update, User.class);
     }
+
+    @Override
+    public void updateAudioList(String username, ArrayList<String> newList) {
+        Query query = new Query(Criteria.where("username").is(username));
+        Update update = Update.update("myAudiobooks", newList);
+        mongoTemplate.updateFirst(query, update, User.class);
+    }
 }

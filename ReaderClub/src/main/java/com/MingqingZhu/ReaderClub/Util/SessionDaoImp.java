@@ -27,4 +27,10 @@ public class SessionDaoImp implements SessionDao{
     public void saveSession(Session session) {
         mongoTemplate.insert(session);
     }
+
+    @Override
+    public void deleteById(String id) {
+        Query query = new Query(Criteria.where("sessionId").is(id));
+        mongoTemplate.remove(query, Session.class);
+    }
 }

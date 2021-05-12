@@ -201,7 +201,6 @@
     right: 0;
     padding-left: 22px;
     height: 30px;
-    background: rgba(0, 0, 0, 0.65) url("./pics/home_images/smallIcon.png") no-repeat;
     background-position: 10px -522px;
     background-origin: padding-box;
     color: #fff;
@@ -271,13 +270,11 @@
     content: "";
     height: 18px;
     width: 18px;
-    background: url("./pics/home_images/button.png") no-repeat;
     background-position: 0 -518px;
     background-origin: border-box;
 }
 .main-content .intro .play-btn:hover {
     cursor: pointer;
-    background: url("./pics/home_images/button.png") no-repeat;
     background-position: 0 -578px;
     background-origin: border-box;
 }

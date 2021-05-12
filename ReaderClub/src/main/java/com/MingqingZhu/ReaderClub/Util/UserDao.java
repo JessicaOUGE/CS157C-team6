@@ -10,4 +10,5 @@ public interface UserDao {
     void deleteByUsername(String username);
     void updatePassword(String username, String newPassword);
     void updateLikeList(String username, ArrayList<String> newList);
+    void updateAudioList(String username, ArrayList<String> newList);
 }

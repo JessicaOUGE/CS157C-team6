@@ -36,7 +36,13 @@ public class MainController {
     private SessionDao sessionDao;
 
     @GetMapping("/")
-    public String home(HttpSession session) {
+    public String home() {
+        return "Login";
+    }
+
+    @PostMapping("/")
+    public String goLogin(HttpSession session) {
+        sessionDao.deleteById(session.getId());
         session.invalidate();
         return "Login";
     }
@@ -47,11 +53,13 @@ public class MainController {
         if(thisSession == null) {
             model.addAttribute("username","Login");
             model.addAttribute("link","/");
+            model.addAttribute("dropdown","Please login");
         } else {
             String greeting = "Hi, "+thisSession.getUserName();
             String link = "/details/" + thisSession.getUserName();
             model.addAttribute("username", greeting);
             model.addAttribute("link", link);
+            model.addAttribute("dropdown","Log out");
         }
         List<Book> results = bookDao.getTwRandom();
         List<String> books = bookToJsonString(results);
@@ -77,6 +85,7 @@ public class MainController {
             model.addAttribute("username",greeting);
             model.addAttribute("link",link);
             model.addAttribute("books",books);
+            model.addAttribute("dropdown", "Log out");
             return "homepage";
         } else {
             return "error";
@@ -89,11 +98,13 @@ public class MainController {
         if(thisSession == null) {
             model.addAttribute("username","Login");
             model.addAttribute("link","/");
+            model.addAttribute("dropdown", "Please login");
         } else {
             String greeting = "Hi, "+thisSession.getUserName();
             String link = "/details/" + thisSession.getUserName();
             model.addAttribute("username", greeting);
             model.addAttribute("link", link);
+            model.addAttribute("dropdown","Log out");
         }
         String key = keyword.substring(2,keyword.length());
         List<Book> results = bookDao.searchByKeyword(key);
@@ -206,38 +217,50 @@ public class MainController {
     }
 
     @PostMapping("/upload")
-    public String handleUpload(@RequestParam("title")String title, @RequestParam("author")String author, @RequestParam("uploader")String uploader, @RequestParam("type")String type, @RequestParam("description")String description, @RequestParam("cover")MultipartFile cover, @RequestParam("audio")MultipartFile audio){
-        Book tmp = new Book();
-        tmp.setTitle(title);
-        ArrayList<String> authors = new ArrayList<String>(Arrays.asList(author.split("\\s*,\\s*")));
-        tmp.setAuthor(authors);
-        tmp.setUploader(uploader);
-        tmp.setType(type);
-        tmp.setDescription(description);
-        String audioFileName = audio.getOriginalFilename();
-        audioFileName = generateRandomName(audioFileName);
-        String audioPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/audio/";
-        try {
-            FileUtil.fileupload(audio.getBytes(), audioPath, audioFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String virtualAudioPath = "/audio/" + audioFileName;
-        tmp.setAudio(virtualAudioPath);
-        String imgFileName = cover.getOriginalFilename();
-        imgFileName = generateRandomName(imgFileName);
-        String imgPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/pics/";
-        try {
-            FileUtil.fileupload(cover.getBytes(), imgPath, imgFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String virtualImgPath = "/pics/" + imgFileName;
-        tmp.setCoverImg(virtualImgPath);
-        bookDao.save(tmp);
+    public String handleUpload(@RequestParam("title")String title, @RequestParam("author")String author, @RequestParam("uploader")String uploader, @RequestParam("type")String type, @RequestParam("description")String description, @RequestParam("cover")MultipartFile cover, @RequestParam("audio")MultipartFile audio, HttpSession session){
+        Session thisSession = sessionDao.findById(session.getId());
+        if (thisSession == null) {
+            return "Login";
+        } else {
+            User user = userDao.findByUsername(thisSession.getUserName());
+            ArrayList<String> tmpList = user.getMyAudiobooks();
+            tmpList.add(title);
+            user.setMyAudiobooks(tmpList);
+            userDao.updateAudioList(user.getUsername(), tmpList);
+
+            Book tmp = new Book();
+            tmp.setTitle(title);
+            ArrayList<String> authors = new ArrayList<String>(Arrays.asList(author.split("\\s*,\\s*")));
+            tmp.setAuthor(authors);
+            tmp.setUploader(uploader);
+            tmp.setType(type);
+            tmp.setDescription(description);
+            String audioFileName = audio.getOriginalFilename();
+            audioFileName = generateRandomName(audioFileName);
+            String audioPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/audio/";
+            try {
+                FileUtil.fileupload(audio.getBytes(), audioPath, audioFileName);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String virtualAudioPath = "/audio/" + audioFileName;
+            tmp.setAudio(virtualAudioPath);
+            String imgFileName = cover.getOriginalFilename();
+            imgFileName = generateRandomName(imgFileName);
+            String imgPath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/pics/";
+            try {
+                FileUtil.fileupload(cover.getBytes(), imgPath, imgFileName);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String virtualImgPath = "/pics/" + imgFileName;
+            tmp.setCoverImg(virtualImgPath);
+            bookDao.save(tmp);
 
 
-        return "audiobook";
+            return "audiobook";
+        }
+
     }
 
     public static List<String> bookToJsonString(List<Book> books) throws Exception {
