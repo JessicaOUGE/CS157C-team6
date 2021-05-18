@@ -17,8 +17,13 @@ public class UserDaoImp implements UserDao{
     private MongoTemplate mongoTemplate;
 
     @Override
-    public void save(User user) {
-        mongoTemplate.insert(user);
+    public int save(User user) {
+        User tmp = findByUsername(user.getUsername());
+        if(tmp == null) {
+            mongoTemplate.insert(user);
+            return 1;
+        }
+        return 0;
     }
 
     @Override

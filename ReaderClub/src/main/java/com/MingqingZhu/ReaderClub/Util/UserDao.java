@@ -5,7 +5,7 @@ import com.MingqingZhu.ReaderClub.Bean.User;
 import java.util.ArrayList;
 
 public interface UserDao {
-    void save(User user);
+    int save(User user);
     User findByUsername(String username);
     void deleteByUsername(String username);
     void updatePassword(String username, String newPassword);

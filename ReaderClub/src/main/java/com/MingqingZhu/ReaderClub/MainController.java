@@ -207,8 +207,12 @@ public class MainController {
         ArrayList<String> tmp = new ArrayList<>();
         user.setMyFavourite(tmp);
         user.setMyAudiobooks(tmp);
-        userDao.save(user);
-        return "Login";
+        int result = userDao.save(user);
+        if(result == 0) {
+            return "error";
+        } else {
+            return "Login";
+        }
     }
 
     @GetMapping("/uploadPage")
